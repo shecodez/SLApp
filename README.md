@@ -1,2 +1,3 @@
-# oom
-MERN stack shopping list
+# SLApp
+
+MERN stack Shopping List App
