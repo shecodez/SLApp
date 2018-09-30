@@ -1,13 +1,13 @@
 import React from "react";
 import {
+	Container,
 	Collapse,
 	Navbar,
 	NavbarToggler,
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
-	Container
+	NavLink
 } from "reactstrap";
 
 class TopNavbar extends React.Component {
