@@ -1,32 +1,27 @@
-import uuid from "uuid";
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from "../actions/types";
+import {
+	ITEMS_LOADING,
+	GET_ITEMS,
+	ADD_ITEM,
+	DELETE_ITEM
+} from "../actions/types";
 
 const initialState = {
-	items: [
-		{
-			id: uuid(),
-			name: "Eggs"
-		},
-		{
-			id: uuid(),
-			name: "Water"
-		},
-		{
-			id: uuid(),
-			name: "Milk"
-		},
-		{
-			id: uuid(),
-			name: "Soda"
-		}
-	]
+	items: [],
+	loading: false
 };
 
 export default function(state = initialState, action) {
 	switch (action.type) {
+		case ITEMS_LOADING:
+			return {
+				...state,
+				loading: true
+			};
 		case GET_ITEMS:
 			return {
-				...state
+				...state,
+				items: action.payload,
+				loading: false
 			};
 		case ADD_ITEM:
 			return {
@@ -36,7 +31,7 @@ export default function(state = initialState, action) {
 		case DELETE_ITEM:
 			return {
 				...state,
-				items: state.items.filter(item => item.id !== action.payload)
+				items: state.items.filter(item => item._id !== action.payload)
 			};
 		default:
 			return state;

@@ -11,7 +11,6 @@ import {
 	Label,
 	Input
 } from "reactstrap";
-import uuid from "uuid";
 
 class ItemModal extends React.Component {
 	state = {
@@ -31,7 +30,6 @@ class ItemModal extends React.Component {
 		e.preventDefault();
 
 		const newItem = {
-			id: uuid(),
 			name: this.state.name.trim()
 		};
 
@@ -66,6 +64,7 @@ class ItemModal extends React.Component {
 									value={this.state.name}
 									placeholder="Add an Item"
 									onChange={this.onChange}
+									autoFocus
 								/>
 							</FormGroup>
 							<FormGroup>
